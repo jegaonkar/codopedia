@@ -1,0 +1,238 @@
+
+<html>
+	<head>
+		<title>Codopedia.com:while & for</title>
+		<link rel="stylesheet" href="css\page.css">
+		<link rel="stylesheet" href="css/font/fontawesome/css/all.min.css">
+	</head>
+	<body id="body">
+		
+
+		<div class="menubar">
+			<div id="mheading">
+		<h1>Codo<span>pedia</span>.com</h1>
+			</div>
+					<a href="m6.html">Contact</a>
+
+					<a href="m5.html">About</a>
+
+					<a href="m4.html">News</a>
+
+					<a href="m3.html">Plus Members</a>
+
+					<a  href="m2.html" class="active">C Languages</a>
+
+					<a href="m1.html" >Home</a>
+		</div>
+
+		<span class="mid">
+		<div class="sidebar">
+			<ul>
+				<li><a href="c1.html" class="active" >LAVEL 1</a>
+				<ul>
+					<li><a href="c1.html" >Introduction</a></li>
+					<li><a href="c2.html" >Structure</a></li>
+					<li><a href="c3.html" >Variables</a></li>
+				</ul></li>
+				<li><a href="c4.html" >LAVEL 2</a>
+				<ul>
+					<li><a href="c4.html" >Input & Output </a></li>
+					<li><a href="c5.html" >If Condition</a></li>
+					<li><a href="c6.html" >Switch Condition</a></li>
+				</ul></li>
+				<li><a href="c7.html" >LAVEL 3 </a>				
+				<ul>
+					<li><a href="c7.html" >Loops- while & for</a></li>
+					<li><a href="c8.html" >Jump Goto</a></li>
+					<li><a href="c9.html" >Break & Continue</a></li>
+				</ul></li>
+				<li><a href="c10.html" >LAVEL 4 </a>
+				<ul>
+					<li><a href="c10.html" >Functions</a></li>
+					<li><a href="c11.html" >Header Files</a></li>
+					<li><a href="c12.html" >Block and Scope</a></li>
+				</ul></li>
+				<li><a href="c13.html" >LAVEL 5 </a>
+				<ul>
+					<li><a href="c13.html" >Storage class</a></li>
+					<li><a href="c14.html" >Defination </a></li>
+					<li><a href="c15.html" >Declaration</a></li>
+				</ul></li>
+				<li><a href="c16.html" >LAVEL 6 </a>
+				<ul>
+					<li><a href="c16.html" >Arrays </a></li>
+					<li><a href="c17.html" >Pointer</a></li>
+					<li><a href="c18.html" >String</a></li>
+				</ul></li>
+				<li><a href="c19.html" >LAVEL 7 </a>
+				<ul>
+					<li><a href="c19.html" >Stracture</a></li>
+					<li><a href="c20.html" >Union</a></li>
+					<li><a href="c21.html" >File System</a></li>
+				</ul></li>
+				<li><a href="c22.html" >LAVEL 8 </a>
+				<ul>
+					<li><a href="c22.html" >Example 1</a></li>
+					<li><a href="c23.html" >Example 2</a></li>
+					<li><a href="c24.html" >Example 3</a></li>
+				</ul></li>
+				<li><a href="c25.html" >LAVEL 9 </a>
+				<ul>
+					<li><a href="c25.html" >Example 4</a></li>
+					<li><a href="c26.html" >Example 5</a></li>
+					<li><a href="c27.html" >Example 6</a></li>
+				</ul></li>
+				<li><a href="c28.html" >LAVEL 10 </a>
+				<ul>
+					<li><a href="c28.html" >Example 7</a></li>
+					<li><a href="c29.html" >Example 8</a></li>
+					<li><a href="c30.html" >Example 9</a></li>
+				</ul></li>
+			</ul>
+		</div>
+		<div class="content">
+			<p id="content_heading">Loops- while & for </p>
+			<div id="content_text">
+				  <p>A while loop in C programming repeatedly executes a target statement as long as a given condition is true. </p>
+
+<span class="sub_point">	Syntax</span> <br>
+<p>The syntax of a while loop in C programming language is −
+</p>
+<pre>while(condition) {
+  statement(s);
+}
+</pre>
+<p>Here, statement(s) may be a single statement or a block of statements. The condition may be any expression, and true is any nonzero value. The loop iterates while the condition is true.</p>
+<p>When the condition becomes false, the program control passes to the line immediately following the loop.</p>
+<span class="sub_point"> Flow Diagram</span> <br>
+<img src="css/cpp_while_loop.jpg" alt="">
+<p>Here, statement(s) may be a single statement or a block of statements. The condition may be any expression, and true is any nonzero value. The loop iterates while the condition is true.
+</p>
+<span class="sub_point">Example </span> <br>
+<pre>
+  #include <stdio.h>
+   
+  int main () {
+  
+     /* local variable definition */
+     int a = 10;
+  
+     /* while loop execution */
+     while( a < 20 ) {
+        printf("value of a: %d\n", a);
+        a++;
+     }
+   
+     return 0;
+  }</pre>
+  <p>When the above code is compiled and executed, it produces the following result −</p>
+  <pre>value of a: 10
+    value of a: 11
+    value of a: 12
+    value of a: 13
+    value of a: 14
+    value of a: 15
+    value of a: 16
+    value of a: 17
+    value of a: 18
+    value of a: 19</pre>
+    
+<span class="sub_point"> for loop in C</span> <br>
+<p>A for loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number of times.</p>
+
+<span class="sub_point"> Syntax</span> <br>
+<p>The syntax of a for loop in C programming language is −</p>
+<pre>for ( init; condition; increment ) {
+  statement(s);
+}
+</pre>
+<p>Here is the flow of control in a 'for' loop −</p>
+<ul>
+  <li>Next, the condition is evaluated. If it is true, the body of the loop is executed. If it is false, the body of the loop does not execute and the flow of control jumps to the next statement just after the 'for' loop.</li>
+  <li>The init step is executed first, and only once. This step allows you to declare and initialize any loop control variables. You are not required to put a statement here, as long as a semicolon appears.</li>
+  <li>After the body of the 'for' loop executes, the flow of control jumps back up to the increment statement. This statement allows you to update any loop control variables. This statement can be left blank, as long as a semicolon appears after the condition.</li>
+  <li>The condition is now evaluated again. If it is true, the loop executes and the process repeats itself (body of loop, then increment step, and then again condition). After the condition becomes false, the 'for' loop terminates.</li>
+</ul>
+<span class="sub_point"> Flow Diagram</span> <br>
+<img src="css/c_for_loop.jpg" alt="">
+
+<span class="sub_point"> Examplem</span> <br>
+<pre>
+  #include <stdio.h>
+   
+  int main () {
+  
+     int a;
+    
+     /* for loop execution */
+     for( a = 10; a < 20; a = a + 1 ){
+        printf("value of a: %d\n", a);
+     }
+   
+     return 0;
+  }</pre>
+  <p>When the above code is compiled and executed, it produces the following result −</p>
+  <pre>value of a: 10
+    value of a: 11
+    value of a: 12
+    value of a: 13
+    value of a: 14
+    value of a: 15
+    value of a: 16
+    value of a: 17
+    value of a: 18
+    value of a: 19</pre>
+
+</div>
+		<div class="circle-btn">
+			<a href="c7.html" class="circle-left-btn"><i class="fas fa-chevron-circle-left"></i></a>
+			<a href="c8.html" class="circle-right-btn"><i class="fas fa-chevron-circle-right"></i></a>
+		</div>		
+		</div>
+		</span>
+
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+			<a href="m1.html">	<h3>Codo<span>pedia</span>.com</h3></a> <br>
+				<a href="log.html"><button class="login_singup_btn">Login/Signup</button></a> <br>
+				<a href="https://www.facebook.com/codopedia1/" target="_blank">	<i class="fab fa-facebook-square"></i></a>
+				<a href="https://twitter.com/Codopedia1"  target="_blank">	<i class="fab fa-twitter-square"></i></a>
+				<a href="https://www.instagram.com/codopedia1/" target="_blank" >	<i class="fab fa-instagram"></i> </a>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<p><span>001 Main Raod,</span> Shiradhon,<br>
+					Kalamb ,Osmanabad, <br>	Maharastra 413528. <br>
+					</p>
+				</div>
+
+				<div>
+					<p>+91-7775938882</p>
+				</div>
+
+				<div>
+					<p><a href="mailto:support@company.com"> codopedia@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-right-heading">
+					<span>Comments </span>
+				</p>
+				<div class="footer-input-box">
+					<input class="ebox" type="text" placeholder="Enter E-mail ID..."> <br>
+					<input class="cbox" type="text" placeholder="Comment...">
+					<a href="submit.html"><input class="button" type="button" value="Submit"></a>
+				</div>
+
+			</div>
+
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,212 @@
+
+<html>
+	<head>
+		<title>Codopedia.com:switch Condition</title>
+		<link rel="stylesheet" href="css\page.css">
+		<link rel="stylesheet" href="css/font/fontawesome/css/all.min.css">
+	</head>
+	<body id="body">
+		
+
+		<div class="menubar">
+			<div id="mheading">
+		<h1>Codo<span>pedia</span>.com</h1>
+			</div>
+					<a href="m6.html">Contact</a>
+
+					<a href="m5.html">About</a>
+
+					<a href="m4.html">News</a>
+
+					<a href="m3.html">Plus Members</a>
+
+					<a  href="m2.html" class="active">C Languages</a>
+
+					<a href="m1.html" >Home</a>
+		</div>
+
+		<span class="mid">
+		<div class="sidebar">
+			<ul>
+				<li><a href="c1.html" class="active" >LAVEL 1</a>
+				<ul>
+					<li><a href="c1.html" >Introduction</a></li>
+					<li><a href="c2.html" >Structure</a></li>
+					<li><a href="c3.html" >Variables</a></li>
+				</ul></li>
+				<li><a href="c4.html" >LAVEL 2</a>
+				<ul>
+					<li><a href="c4.html" >Input & Output </a></li>
+					<li><a href="c5.html" >If Condition</a></li>
+					<li><a href="c6.html" >Switch Condition</a></li>
+				</ul></li>
+				<li><a href="c7.html" >LAVEL 3 </a>				
+				<ul>
+					<li><a href="c7.html" >Loops- while & for</a></li>
+					<li><a href="c8.html" >Jump Goto</a></li>
+					<li><a href="c9.html" >Break & Continue</a></li>
+				</ul></li>
+				<li><a href="c10.html" >LAVEL 4 </a>
+				<ul>
+					<li><a href="c10.html" >Functions</a></li>
+					<li><a href="c11.html" >Header Files</a></li>
+					<li><a href="c12.html" >Block and Scope</a></li>
+				</ul></li>
+				<li><a href="c13.html" >LAVEL 5 </a>
+				<ul>
+					<li><a href="c13.html" >Storage class</a></li>
+					<li><a href="c14.html" >Defination </a></li>
+					<li><a href="c15.html" >Declaration</a></li>
+				</ul></li>
+				<li><a href="c16.html" >LAVEL 6 </a>
+				<ul>
+					<li><a href="c16.html" >Arrays </a></li>
+					<li><a href="c17.html" >Pointer</a></li>
+					<li><a href="c18.html" >String</a></li>
+				</ul></li>
+				<li><a href="c19.html" >LAVEL 7 </a>
+				<ul>
+					<li><a href="c19.html" >Stracture</a></li>
+					<li><a href="c20.html" >Union</a></li>
+					<li><a href="c21.html" >File System</a></li>
+				</ul></li>
+				<li><a href="c22.html" >LAVEL 8 </a>
+				<ul>
+					<li><a href="c22.html" >Example 1</a></li>
+					<li><a href="c23.html" >Example 2</a></li>
+					<li><a href="c24.html" >Example 3</a></li>
+				</ul></li>
+				<li><a href="c25.html" >LAVEL 9 </a>
+				<ul>
+					<li><a href="c25.html" >Example 4</a></li>
+					<li><a href="c26.html" >Example 5</a></li>
+					<li><a href="c27.html" >Example 6</a></li>
+				</ul></li>
+				<li><a href="c28.html" >LAVEL 10 </a>
+				<ul>
+					<li><a href="c28.html" >Example 7</a></li>
+					<li><a href="c29.html" >Example 8</a></li>
+					<li><a href="c30.html" >Example 9</a></li>
+				</ul></li>
+			</ul>
+		</div>
+		<div class="content">
+			<p id="content_heading">C - switch Condition</p>
+			<div id="content_text"> 
+          <p>A switch statement allows a variable to be tested for equality against a list of values. Each value is called a case, and the variable being switched on is checked for each switch case.</p>
+
+<span class="sub_point">	Preprocessor Commands:</span> <br>
+<p>The syntax for a switch statement in C programming language is as follows −
+</p>
+<pre>switch(expression) {
+
+  case constant-expression  :
+     statement(s);
+     break; /* optional */
+ 
+  case constant-expression  :
+     statement(s);
+     break; /* optional */
+ 
+  /* you can have any number of case statements */
+  default : /* Optional */
+  statement(s);
+}</pre>
+<pre>The following rules apply to a switch statement −</pre>
+<ul>
+  <li>The expression used in a switch statement must have an integral or enumerated type, or be of a class type in which the class has a single conversion function to an integral or enumerated type.</li>
+  <li>The constant-expression for a case must be the same data type as the variable in the switch, and it must be a constant or a literal.</li>
+  <li>You can have any number of case statements within a switch. Each case is followed by the value to be compared to and a colon.</li>
+  <li>When a break statement is reached, the switch terminates, and the flow of control jumps to the next line following the switch statement.</li>
+  <li>When the variable being switched on is equal to a case, the statements following that case will execute until a break statement is reached.</li>
+  <li>Not every case needs to contain a break. If no break appears, the flow of control will fall through to subsequent cases until a break is reached.</li>
+  <li>A switch statement can have an optional default case, which must appear at the end of the switch. The default case can be used for performing a task when none of the cases is true. No break is needed in the default case.</li>
+</ul>
+<span class="sub_point"> Flow Diagram</span> <br>
+<p><img src="css/switch_statement.jpg" alt=""></p>
+<span class="sub_point"> Example </span> <br>
+<pre>#include <stdio.h>
+ 
+  int main () {
+  
+     /* local variable definition */
+     char grade = 'B';
+  
+     switch(grade) {
+        case 'A' :
+           printf("Excellent!\n" );
+           break;
+        case 'B' :
+        case 'C' :
+           printf("Well done\n" );
+           break;
+        case 'D' :
+           printf("You passed\n" );
+           break;
+        case 'F' :
+           printf("Better try again\n" );
+           break;
+        default :
+           printf("Invalid grade\n" );
+     }
+     
+     printf("Your grade is  %c\n", grade );
+   
+     return 0;
+  }</pre>
+  <p>When the above code is compiled and executed, it produces the following result −</p>
+  <pre>Well done
+    Your grade is B</pre>
+</div>
+		<div class="circle-btn">
+			<a href="c5.html" class="circle-left-btn"><i class="fas fa-chevron-circle-left"></i></a>
+			<a href="c7.html" class="circle-right-btn"><i class="fas fa-chevron-circle-right"></i></a>
+		</div>		
+		</div>
+		</span>
+
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+			<a href="m1.html">	<h3>Codo<span>pedia</span>.com</h3></a> <br>
+				<a href="log.html"><button class="login_singup_btn">Login/Signup</button></a> <br>
+				<a href="https://www.facebook.com/codopedia1/" target="_blank">	<i class="fab fa-facebook-square"></i></a>
+				<a href="https://twitter.com/Codopedia1"  target="_blank">	<i class="fab fa-twitter-square"></i></a>
+				<a href="https://www.instagram.com/codopedia1/" target="_blank" >	<i class="fab fa-instagram"></i> </a>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<p><span>001 Main Raod,</span> Shiradhon,<br>
+					Kalamb ,Osmanabad, <br>	Maharastra 413528. <br>
+					</p>
+				</div>
+
+				<div>
+					<p>+91-7775938882</p>
+				</div>
+
+				<div>
+					<p><a href="mailto:support@company.com"> codopedia@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-right-heading">
+					<span>Comments </span>
+				</p>
+				<div class="footer-input-box">
+					<input class="ebox" type="text" placeholder="Enter E-mail ID..."> <br>
+					<input class="cbox" type="text" placeholder="Comment...">
+					<a href="submit.html"><input class="button" type="button" value="Submit"></a>
+				</div>
+
+			</div>
+
+		</footer>
+	</body>
+</html>

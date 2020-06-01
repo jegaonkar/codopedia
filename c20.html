@@ -1,0 +1,246 @@
+
+<html>
+	<head>
+		<title>Codopedia.com:C - Unions  </title>
+		<link rel="stylesheet" href="css\page.css">
+		<link rel="stylesheet" href="css/font/fontawesome/css/all.min.css">
+	</head>
+	<body id="body">
+		
+
+		<div class="menubar">
+			<div id="mheading">
+		<h1>Codo<span>pedia</span>.com</h1>
+			</div>
+					<a href="m6.html">Contact</a>
+
+					<a href="m5.html">About</a>
+
+					<a href="m4.html">News</a>
+
+					<a href="m3.html">Plus Members</a>
+
+					<a  href="m2.html" class="active">C Languages</a>
+
+					<a href="m1.html" >Home</a>
+		</div>
+
+		<span class="mid">
+		<div class="sidebar">
+			<ul>
+				<li><a href="c1.html" class="active" >LAVEL 1</a>
+				<ul>
+					<li><a href="c1.html" >Introduction</a></li>
+					<li><a href="c2.html" >Structure</a></li>
+					<li><a href="c3.html" >Variables</a></li>
+				</ul></li>
+				<li><a href="c4.html" >LAVEL 2</a>
+				<ul>
+					<li><a href="c4.html" >Input & Output </a></li>
+					<li><a href="c5.html" >If Condition</a></li>
+					<li><a href="c6.html" >Switch Condition</a></li>
+				</ul></li>
+				<li><a href="c7.html" >LAVEL 3 </a>				
+				<ul>
+					<li><a href="c7.html" >Loops- while & for</a></li>
+					<li><a href="c8.html" >Jump Goto</a></li>
+					<li><a href="c9.html" >Break & Continue</a></li>
+				</ul></li>
+				<li><a href="c10.html" >LAVEL 4 </a>
+				<ul>
+					<li><a href="c10.html" >Functions</a></li>
+					<li><a href="c11.html" >Header Files</a></li>
+					<li><a href="c12.html" >Block and Scope</a></li>
+				</ul></li>
+				<li><a href="c13.html" >LAVEL 5 </a>
+				<ul>
+					<li><a href="c13.html" >Storage class</a></li>
+					<li><a href="c14.html" >Defination </a></li>
+					<li><a href="c15.html" >Declaration</a></li>
+				</ul></li>
+				<li><a href="c16.html" >LAVEL 6 </a>
+				<ul>
+					<li><a href="c16.html" >Arrays </a></li>
+					<li><a href="c17.html" >Pointer</a></li>
+					<li><a href="c18.html" >String</a></li>
+				</ul></li>
+				<li><a href="c19.html" >LAVEL 7 </a>
+				<ul>
+					<li><a href="c19.html" >Stracture</a></li>
+					<li><a href="c20.html" >Union</a></li>
+					<li><a href="c21.html" >File System</a></li>
+				</ul></li>
+				<li><a href="c22.html" >LAVEL 8 </a>
+				<ul>
+					<li><a href="c22.html" >Example 1</a></li>
+					<li><a href="c23.html" >Example 2</a></li>
+					<li><a href="c24.html" >Example 3</a></li>
+				</ul></li>
+				<li><a href="c25.html" >LAVEL 9 </a>
+				<ul>
+					<li><a href="c25.html" >Example 4</a></li>
+					<li><a href="c26.html" >Example 5</a></li>
+					<li><a href="c27.html" >Example 6</a></li>
+				</ul></li>
+				<li><a href="c28.html" >LAVEL 10 </a>
+				<ul>
+					<li><a href="c28.html" >Example 7</a></li>
+					<li><a href="c29.html" >Example 8</a></li>
+					<li><a href="c30.html" >Example 9</a></li>
+				</ul></li>
+			</ul>
+		</div>
+		<div class="content">
+			<p id="content_heading">C - Unions </p>
+			<div id="content_text">
+				  <p> A union is a special data type available in C that allows to store different data types in the same memory location. You can define a union with many members, but only one member can contain a value at any given time. Unions provide an efficient way of using the same memory location for multiple-purpose.</p>
+<span class="sub_point">Defining a Union</span> <br>
+<p>To define a union, you must use the union statement in the same way as you did while defining a structure. The union statement defines a new data type with more than one member for your program. The format of the union statement is as follows −
+</p>
+<pre>union [union tag] {
+  member definition;
+  member definition;
+  ...
+  member definition;
+} [one or more union variables];  </pre>
+<p>The union tag is optional and each member definition is a normal variable definition, such as int i; or float f; or any other valid variable definition. At the end of the union's definition, before the final semicolon, you can specify one or more union variables but it is optional. Here is the way you would define a union type named Data having three members i, f, and str −</p>
+<pre>union Data {
+  int i;
+  float f;
+  char str[20];
+} data;  </pre>
+<p>Now, a variable of Data type can store an integer, a floating-point number, or a string of characters. It means a single variable, i.e., same memory location, can be used to store multiple types of data. You can use any built-in or user defined data types inside a union based on your requirement.</p>
+<p>The memory occupied by a union will be large enough to hold the largest member of the union. For example, in the above example, Data type will occupy 20 bytes of memory space because this is the maximum space which can be occupied by a character string. The following example displays the total memory size occupied by the above union −</p>
+<pre>#include <stdio.h>
+  #include <string.h>
+   
+  union Data {
+     int i;
+     float f;
+     char str[20];
+  };
+   
+  int main( ) {
+  
+     union Data data;        
+  
+     printf( "Memory size occupied by data : %d\n", sizeof(data));
+  
+     return 0;
+  }</pre>
+  <p>When the above code is compiled and executed, it produces the following result −</p>
+  <pre>Memory size occupied by data : 20</pre>
+<span class="sub_point">Accessing Union Members</span> <br>
+<p>To access any member of a union, we use the member access operator (.). The member access operator is coded as a period between the union variable name and the union member that we wish to access. You would use the keyword union to define variables of union type. The following example shows how to use unions in a program − <p>
+  <pre>#include <stdio.h>
+    #include <string.h>
+     
+    union Data {
+       int i;
+       float f;
+       char str[20];
+    };
+     
+    int main( ) {
+    
+       union Data data;        
+    
+       data.i = 10;
+       data.f = 220.5;
+       strcpy( data.str, "C Programming");
+    
+       printf( "data.i : %d\n", data.i);
+       printf( "data.f : %f\n", data.f);
+       printf( "data.str : %s\n", data.str);
+    
+       return 0;
+    }</pre>
+    <p>When the above code is compiled and executed, it produces the following result −</p>
+    <pre>data.i : 1917853763
+      data.f : 4122360580327794860452759994368.000000
+      data.str : C Programming</pre>
+      <p>Here, we can see that the values of i and f members of union got corrupted because the final value assigned to the variable has occupied the memory location and this is the reason that the value of str member is getting printed very well.</p>
+      <p>Now let's look into the same example once again where we will use one variable at a time which is the main purpose of having unions −
+      </p>
+      <pre>#include <stdio.h>
+        #include <string.h>
+         
+        union Data {
+           int i;
+           float f;
+           char str[20];
+        };
+         
+        int main( ) {
+        
+           union Data data;        
+        
+           data.i = 10;
+           printf( "data.i : %d\n", data.i);
+           
+           data.f = 220.5;
+           printf( "data.f : %f\n", data.f);
+           
+           strcpy( data.str, "C Programming");
+           printf( "data.str : %s\n", data.str);
+        
+           return 0;
+        }</pre>
+        <p>When the above code is compiled and executed, it produces the following result −</p>
+        <pre>data.i : 10
+          data.f : 220.500000
+          data.str : C Programming</pre>
+          <p>Here, all the members are getting printed very well because one member is being used at a time.</p>
+</div>
+		<div class="circle-btn">
+			<a href="c19.html" class="circle-left-btn"><i class="fas fa-chevron-circle-left"></i></a>
+			<a href="c21.html" class="circle-right-btn"><i class="fas fa-chevron-circle-right"></i></a>
+		</div>		
+		</div>
+		</span>
+
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+			<a href="m1.html">	<h3>Codo<span>pedia</span>.com</h3></a> <br>
+				<a href="log.html"><button class="login_singup_btn">Login/Signup</button></a> <br>
+				<a href="https://www.facebook.com/codopedia1/" target="_blank">	<i class="fab fa-facebook-square"></i></a>
+				<a href="https://twitter.com/Codopedia1"  target="_blank">	<i class="fab fa-twitter-square"></i></a>
+				<a href="https://www.instagram.com/codopedia1/" target="_blank" >	<i class="fab fa-instagram"></i> </a>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<p><span>001 Main Raod,</span> Shiradhon,<br>
+					Kalamb ,Osmanabad, <br>	Maharastra 413528. <br>
+					</p>
+				</div>
+
+				<div>
+					<p>+91-7775938882</p>
+				</div>
+
+				<div>
+					<p><a href="mailto:support@company.com"> codopedia@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-right-heading">
+					<span>Comments </span>
+				</p>
+				<div class="footer-input-box">
+					<input class="ebox" type="text" placeholder="Enter E-mail ID..."> <br>
+					<input class="cbox" type="text" placeholder="Comment...">
+					<a href="submit.html"><input class="button" type="button" value="Submit"></a>
+				</div>
+
+			</div>
+
+		</footer>
+	</body>
+</html>

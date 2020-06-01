@@ -1,0 +1,218 @@
+
+<html>
+	<head>
+		<title> Codopedia.com: C - Arrays</title>
+		<link rel="stylesheet" href="css\page.css">
+		<link rel="stylesheet" href="css/font/fontawesome/css/all.min.css">
+	</head>
+	<body id="body">
+		
+
+		<div class="menubar">
+			<div id="mheading">
+		<h1>Codo<span>pedia</span>.com</h1>
+			</div>
+					<a href="m6.html">Contact</a>
+
+					<a href="m5.html">About</a>
+
+					<a href="m4.html">News</a>
+
+					<a href="m3.html">Plus Members</a>
+
+					<a  href="m2.html" class="active">C Languages</a>
+
+					<a href="m1.html" >Home</a>
+		</div>
+
+		<span class="mid">
+		<div class="sidebar">
+			<ul>
+				<li><a href="c1.html" class="active" >LAVEL 1</a>
+				<ul>
+					<li><a href="c1.html" >Introduction</a></li>
+					<li><a href="c2.html" >Structure</a></li>
+					<li><a href="c3.html" >Variables</a></li>
+				</ul></li>
+				<li><a href="c4.html" >LAVEL 2</a>
+				<ul>
+					<li><a href="c4.html" >Input & Output </a></li>
+					<li><a href="c5.html" >If Condition</a></li>
+					<li><a href="c6.html" >Switch Condition</a></li>
+				</ul></li>
+				<li><a href="c7.html" >LAVEL 3 </a>				
+				<ul>
+					<li><a href="c7.html" >Loops- while & for</a></li>
+					<li><a href="c8.html" >Jump Goto</a></li>
+					<li><a href="c9.html" >Break & Continue</a></li>
+				</ul></li>
+				<li><a href="c10.html" >LAVEL 4 </a>
+				<ul>
+					<li><a href="c10.html" >Functions</a></li>
+					<li><a href="c11.html" >Header Files</a></li>
+					<li><a href="c12.html" >Block and Scope</a></li>
+				</ul></li>
+				<li><a href="c13.html" >LAVEL 5 </a>
+				<ul>
+					<li><a href="c13.html" >Storage class</a></li>
+					<li><a href="c14.html" >Defination </a></li>
+					<li><a href="c15.html" >Declaration</a></li>
+				</ul></li>
+				<li><a href="c16.html" >LAVEL 6 </a>
+				<ul>
+					<li><a href="c16.html" >Arrays </a></li>
+					<li><a href="c17.html" >Pointer</a></li>
+					<li><a href="c18.html" >String</a></li>
+				</ul></li>
+				<li><a href="c19.html" >LAVEL 7 </a>
+				<ul>
+					<li><a href="c19.html" >Stracture</a></li>
+					<li><a href="c20.html" >Union</a></li>
+					<li><a href="c21.html" >File System</a></li>
+				</ul></li>
+				<li><a href="c22.html" >LAVEL 8 </a>
+				<ul>
+					<li><a href="c22.html" >Example 1</a></li>
+					<li><a href="c23.html" >Example 2</a></li>
+					<li><a href="c24.html" >Example 3</a></li>
+				</ul></li>
+				<li><a href="c25.html" >LAVEL 9 </a>
+				<ul>
+					<li><a href="c25.html" >Example 4</a></li>
+					<li><a href="c26.html" >Example 5</a></li>
+					<li><a href="c27.html" >Example 6</a></li>
+				</ul></li>
+				<li><a href="c28.html" >LAVEL 10 </a>
+				<ul>
+					<li><a href="c28.html" >Example 7</a></li>
+					<li><a href="c29.html" >Example 8</a></li>
+					<li><a href="c30.html" >Example 9</a></li>
+				</ul></li>
+			</ul>
+		</div>
+		<div class="content">
+			<p id="content_heading">C - Arrays</p>
+			<div id="content_text">
+				  <p>Arrays a kind of data structure that can store a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is often more useful to think of an array as a collection of variables of the same type. </p>
+          <p>Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables. A specific element in an array is accessed by an index.</p>
+          <p>All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest address to the last element.
+
+          </p>
+
+<span class="sub_point">Declaring Arrays</span> <br>
+<p>To declare an array in C, a programmer specifies the type of the elements and the number of elements required by an array as follows −
+</p>
+<pre>type arrayName [ arraySize ];</pre>
+<p>This is called a single-dimensional array. The arraySize must be an integer constant greater than zero and type can be any valid C data type. For example, to declare a 10-element array called balance of type double, use this statement −</p>
+<pre>double balance[10];</pre>
+<p>Here balance is a variable array which is sufficient to hold up to 10 double numbers.
+</p>
+<span class="sub_point">Initializing Arrays</span> <br><p>
+  You can initialize an array in C either one by one or using a single statement as follows −.</p>
+  <pre>double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};</pre>
+<p>If you omit the size of the array, an array just big enough to hold the initialization is created. Therefore, if you write −
+</p>
+<pre>double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+</pre>
+<p>You will create exactly the same array as you did in the previous example. Following is an example to assign a single element of the array −
+</p>
+<pre>balance[4] = 50.0;
+</pre>
+<p>The above statement assigns the 5th element in the array with a value of 50.0. All arrays have 0 as the index of their first element which is also called the base index and the last index of an array will be total size of the array minus 1. Shown below is the pictorial representation of the array we discussed above −
+
+</p>
+<span class="sub_point">Accessing Array Elements</span> <br>
+<p>An element is accessed by indexing the array name. This is done by placing the index of the element within square brackets after the name of the array. For example −
+</p>
+<pre>double salary = balance[9];
+</pre>
+<p>The above statement will take the 10th element from the array and assign the value to salary variable. The following example Shows how to use all the three above mentioned concepts viz. declaration, assignment, and accessing arrays −</p>
+<pre>
+  #include <stdio.h>
+   
+  int main () {
+  
+     int n[ 10 ]; /* n is an array of 10 integers */
+     int i,j;
+   
+     /* initialize elements of array n to 0 */         
+     for ( i = 0; i < 10; i++ ) {
+        n[ i ] = i + 100; /* set element at location i to i + 100 */
+     }
+     
+     /* output each array element's value */
+     for (j = 0; j < 10; j++ ) {
+        printf("Element[%d] = %d\n", j, n[j] );
+     }
+   
+     return 0;
+  }</pre>
+  <p>When the above code is compiled and executed, it produces the following result −</p>
+  <pre>Element[0] = 100
+    Element[1] = 101
+    Element[2] = 102
+    Element[3] = 103
+    Element[4] = 104
+    Element[5] = 105
+    Element[6] = 106
+    Element[7] = 107
+    Element[8] = 108
+    Element[9] = 109</pre>
+
+<span class="sub_point"> point</span> <br>
+<p>Comments: are used to give additional useful information inside a C Program. All the comments will be put inside /*...*/ as given in the example above. A comment can span through multiple lines.</p>
+
+</p>
+</div>
+		<div class="circle-btn">
+			<a href="c15.html" class="circle-left-btn"><i class="fas fa-chevron-circle-left"></i></a>
+			<a href="c17.html" class="circle-right-btn"><i class="fas fa-chevron-circle-right"></i></a>
+		</div>		
+		</div>
+		</span>
+
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+			<a href="m1.html">	<h3>Codo<span>pedia</span>.com</h3></a> <br>
+				<a href="log.html"><button class="login_singup_btn">Login/Signup</button></a> <br>
+				<a href="https://www.facebook.com/codopedia1/" target="_blank">	<i class="fab fa-facebook-square"></i></a>
+				<a href="https://twitter.com/Codopedia1"  target="_blank">	<i class="fab fa-twitter-square"></i></a>
+				<a href="https://www.instagram.com/codopedia1/" target="_blank" >	<i class="fab fa-instagram"></i> </a>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<p><span>001 Main Raod,</span> Shiradhon,<br>
+					Kalamb ,Osmanabad, <br>	Maharastra 413528. <br>
+					</p>
+				</div>
+
+				<div>
+					<p>+91-7775938882</p>
+				</div>
+
+				<div>
+					<p><a href="mailto:support@company.com"> codopedia@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-right-heading">
+					<span>Comments </span>
+				</p>
+				<div class="footer-input-box">
+					<input class="ebox" type="text" placeholder="Enter E-mail ID..."> <br>
+					<input class="cbox" type="text" placeholder="Comment...">
+					<a href="submit.html"><input class="button" type="button" value="Submit"></a>
+				</div>
+
+			</div>
+
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,209 @@
+
+<html>
+	<head>
+		<title>Codopedia.com:C - File I/O  </title>
+		<link rel="stylesheet" href="css\page.css">
+		<link rel="stylesheet" href="css/font/fontawesome/css/all.min.css">
+	</head>
+	<body id="body">
+		
+
+		<div class="menubar">
+			<div id="mheading">
+		<h1>Codo<span>pedia</span>.com</h1>
+			</div>
+					<a href="m6.html">Contact</a>
+
+					<a href="m5.html">About</a>
+
+					<a href="m4.html">News</a>
+
+					<a href="m3.html">Plus Members</a>
+
+					<a  href="m2.html" class="active">C Languages</a>
+
+					<a href="m1.html" >Home</a>
+		</div>
+
+		<span class="mid">
+		<div class="sidebar">
+			<ul>
+				<li><a href="c1.html" class="active" >LAVEL 1</a>
+				<ul>
+					<li><a href="c1.html" >Introduction</a></li>
+					<li><a href="c2.html" >Structure</a></li>
+					<li><a href="c3.html" >Variables</a></li>
+				</ul></li>
+				<li><a href="c4.html" >LAVEL 2</a>
+				<ul>
+					<li><a href="c4.html" >Input & Output </a></li>
+					<li><a href="c5.html" >If Condition</a></li>
+					<li><a href="c6.html" >Switch Condition</a></li>
+				</ul></li>
+				<li><a href="c7.html" >LAVEL 3 </a>				
+				<ul>
+					<li><a href="c7.html" >Loops- while & for</a></li>
+					<li><a href="c8.html" >Jump Goto</a></li>
+					<li><a href="c9.html" >Break & Continue</a></li>
+				</ul></li>
+				<li><a href="c10.html" >LAVEL 4 </a>
+				<ul>
+					<li><a href="c10.html" >Functions</a></li>
+					<li><a href="c11.html" >Header Files</a></li>
+					<li><a href="c12.html" >Block and Scope</a></li>
+				</ul></li>
+				<li><a href="c13.html" >LAVEL 5 </a>
+				<ul>
+					<li><a href="c13.html" >Storage class</a></li>
+					<li><a href="c14.html" >Defination </a></li>
+					<li><a href="c15.html" >Declaration</a></li>
+				</ul></li>
+				<li><a href="c16.html" >LAVEL 6 </a>
+				<ul>
+					<li><a href="c16.html" >Arrays </a></li>
+					<li><a href="c17.html" >Pointer</a></li>
+					<li><a href="c18.html" >String</a></li>
+				</ul></li>
+				<li><a href="c19.html" >LAVEL 7 </a>
+				<ul>
+					<li><a href="c19.html" >Stracture</a></li>
+					<li><a href="c20.html" >Union</a></li>
+					<li><a href="c21.html" >File System</a></li>
+				</ul></li>
+				<li><a href="c22.html" >LAVEL 8 </a>
+				<ul>
+					<li><a href="c22.html" >Example 1</a></li>
+					<li><a href="c23.html" >Example 2</a></li>
+					<li><a href="c24.html" >Example 3</a></li>
+				</ul></li>
+				<li><a href="c25.html" >LAVEL 9 </a>
+				<ul>
+					<li><a href="c25.html" >Example 4</a></li>
+					<li><a href="c26.html" >Example 5</a></li>
+					<li><a href="c27.html" >Example 6</a></li>
+				</ul></li>
+				<li><a href="c28.html" >LAVEL 10 </a>
+				<ul>
+					<li><a href="c28.html" >Example 7</a></li>
+					<li><a href="c29.html" >Example 8</a></li>
+					<li><a href="c30.html" >Example 9</a></li>
+				</ul></li>
+			</ul>
+		</div>
+		<div class="content">
+			<p id="content_heading">C - File System </p>
+			<div id="content_text">
+				  <p>The last chapter explained the standard input and output devices handled by C programming language. This chapter cover how C programmers can create, open, close text or binary files for their data storage.</p>
+<p>A file represents a sequence of bytes, regardless of it being a text file or a binary file. C programming language provides access on high level functions as well as low level (OS level) calls to handle file on your storage devices. This chapter will take you through the important calls for file management.</p>
+
+<span class="sub_point">Opening Files</span> <br>
+<p>You can use the fopen( ) function to create a new file or to open an existing file. This call will initialize an object of the type FILE, which contains all the information necessary to control the stream. The prototype of this function call is as follows −
+</p>
+<pre>FILE *fopen( const char * filename, const char * mode );</pre>
+<p>Here, filename is a string literal, which you will use to name your file, and access mode can have one of the following values −</p>
+<p>If you are going to handle binary files, then you will use following access modes instead of the above mentioned ones −</p>
+<pre>"rb", "wb", "ab", "rb+", "r+b", "wb+", "w+b", "ab+", "a+b"
+</pre>
+<span class="sub_point"> Closing a File:</span> <br>
+<p>To close a file, use the fclose( ) function. The prototype of this function is −<p>
+  <pre>int fclose( FILE *fp );</pre>
+  <p>The fclose(-) function returns zero on success, or EOF if there is an error in closing the file. This function actually flushes any data still pending in the buffer to the file, closes the file, and releases any memory used for the file. The EOF is a constant defined in the header file stdio.h.</p>
+  <p>There are various functions provided by C standard library to read and write a file, character by character, or in the form of a fixed length string.</p>
+<span class="sub_point"> Writing a File</span> <br>
+<p>Following is the simplest function to write individual characters to a stream −
+</p>
+<pre>int fputc( int c, FILE *fp );</pre>
+<p>The function fputc() writes the character value of the argument c to the output stream referenced by fp. It returns the written character written on success otherwise EOF if there is an error. You can use the following functions to write a null-terminated string to a stream −</p>
+<pre>int fputs( const char *s, FILE *fp );</pre>
+<p>The function fputs() writes the string s to the output stream referenced by fp. It returns a non-negative value on success, otherwise EOF is returned in case of any error. You can use int fprintf(FILE *fp,const char *format, ...) function as well to write a string into a file. Try the following example.</p>
+<p>Make sure you have /tmp directory available. If it is not, then before proceeding, you must create this directory on your machine.</p>
+<pre>v</pre>
+<p>When the above code is compiled and executed, it creates a new file test.txt in /tmp directory and writes two lines using two different functions. Let us read this file in the next section.</p>
+
+<span class="sub_point"> Reading a File</span> <br>
+<p>Given below is the simplest function to read a single character from a file −</p>
+<pre>int fgetc( FILE * fp );</pre>
+<p>The fgetc() function reads a character from the input file referenced by fp. The return value is the character read, or in case of any error, it returns EOF. The following function allows to read a string from a stream −</p>
+<pre>char *fgets( char *buf, int n, FILE *fp );</pre>
+<p>The functions fgets() reads up to n-1 characters from the input stream referenced by fp. It copies the read string into the buffer buf, appending a null character to terminate the string.</p>
+<p>v</p>
+<pre>#include <stdio.h>
+
+  main() {
+  
+     FILE *fp;
+     char buff[255];
+  
+     fp = fopen("/tmp/test.txt", "r");
+     fscanf(fp, "%s", buff);
+     printf("1 : %s\n", buff );
+  
+     fgets(buff, 255, (FILE*)fp);
+     printf("2: %s\n", buff );
+     
+     fgets(buff, 255, (FILE*)fp);
+     printf("3: %s\n", buff );
+     fclose(fp);
+  
+  }</pre>
+  <p>When the above code is compiled and executed, it reads the file created in the previous section and produces the following result −</p>
+  <pre>1 : This
+    2: is testing for fprintf...
+    
+    3: This is testing for fputs...</pre>
+    <p>Let's see a little more in detail about what happened here. First, fscanf() read just This because after that, it encountered a space, second call is for fgets() which reads the remaining line till it encountered end of line. Finally, the last call fgets() reads the second line completely.</p>
+
+</p>
+</div>
+		<div class="circle-btn">
+			<a href="c20.html" class="circle-left-btn"><i class="fas fa-chevron-circle-left"></i></a>
+			<a href="c22.html" class="circle-right-btn"><i class="fas fa-chevron-circle-right"></i></a>
+		</div>		
+		</div>
+		</span>
+
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+			<a href="m1.html">	<h3>Codo<span>pedia</span>.com</h3></a> <br>
+				<a href="log.html"><button class="login_singup_btn">Login/Signup</button></a> <br>
+				<a href="https://www.facebook.com/codopedia1/" target="_blank">	<i class="fab fa-facebook-square"></i></a>
+				<a href="https://twitter.com/Codopedia1"  target="_blank">	<i class="fab fa-twitter-square"></i></a>
+				<a href="https://www.instagram.com/codopedia1/" target="_blank" >	<i class="fab fa-instagram"></i> </a>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<p><span>001 Main Raod,</span> Shiradhon,<br>
+					Kalamb ,Osmanabad, <br>	Maharastra 413528. <br>
+					</p>
+				</div>
+
+				<div>
+					<p>+91-7775938882</p>
+				</div>
+
+				<div>
+					<p><a href="mailto:support@company.com"> codopedia@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-right-heading">
+					<span>Comments </span>
+				</p>
+				<div class="footer-input-box">
+					<input class="ebox" type="text" placeholder="Enter E-mail ID..."> <br>
+					<input class="cbox" type="text" placeholder="Comment...">
+					<a href="submit.html"><input class="button" type="button" value="Submit"></a>
+				</div>
+
+			</div>
+
+		</footer>
+	</body>
+</html>
